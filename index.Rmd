@@ -29,8 +29,8 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 
 This is a test to insert an image to the report
 
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](./images/table_series_overlap.png)
+![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](table_series_overlap.png)
 
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](./images/iRacing - VRS GT Sprint Series.png)
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](./images/iRacing - Fanatec GT3 Challenge - Fixed.png)
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](./images/iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed.png)
+![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - VRS GT Sprint Series.png)
+![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - Fanatec GT3 Challenge - Fixed.png)
+![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed.png)

@@ -3,7 +3,7 @@
     "path": "~/Coursera EDA/hello-world/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "2691420851",
     "contents": "",
     "dirty": false,
     "created": 1620159158280.0,
@@ -11,15 +11,15 @@
     "relative_order": 3,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "28,0",
-        "scrollLine": "10"
+        "cursorPosition": "35,72",
+        "scrollLine": "29"
     },
     "folds": "",
-    "lastKnownWriteTime": 1620166914,
+    "lastKnownWriteTime": 1620167286,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1620166914963,
+    "last_content_update": 1620167286503,
     "read_only": false,
     "read_only_alternatives": []
 }
