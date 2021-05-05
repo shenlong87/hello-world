@@ -7,8 +7,10 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-output: 
-  html_document:
-    theme: cosmo
-    highlight: textmate
+output:
+  MyRmdTemplate::my_html_format:
+    toc: true
+    toc_float:
+      collapsed: true
+    
   

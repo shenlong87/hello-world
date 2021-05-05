@@ -1,13 +1,15 @@
 ---
 title: "My Homepage"
-output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+library(ggplot2)
+library(png)
 ```
 
-## R Markdown
+# R Markdown {.tabset}
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
@@ -17,6 +19,11 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(cars)
 ```
 
+## Testing Header 2
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+
 ## Including Plots
 
 You can also embed plots, for example:
@@ -25,12 +32,22 @@ You can also embed plots, for example:
 plot(pressure)
 ```
 
+
+## Testing the image with an R chunk
+
+```{r, fig.retina=3}
+img1_path<- "./ir.clubname.ovr.png"
+knitr::include_graphics(img1_path) 
+```
+
+
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+## Testing an image with HTML image inserting
 This is a test to insert an image to the report
 
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](table_series_overlap.png)
+![first image](dr.division.ovr.png)
 
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - VRS GT Sprint Series.png)
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - Fanatec GT3 Challenge - Fixed.png)
-![an image caption Source: Ultimate Funny Dog Videos Compilation 2013.](iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed.png)
+After the image there is a table
+
+![first image](table_series_overlap.png)
