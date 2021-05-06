@@ -3,12 +3,6 @@ title: "My Homepage"
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(knitr)
-library(ggplot2)
-library(png)
-```
 
 # R Markdown {.tabset}
 
@@ -16,43 +10,36 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+```
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
 ```
 
 ## Testing Header 2
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-The custom CSS file has been used to change the style of the document. Here is an example table:
-
-```{r table}
-knitr::kable(mtcars[1:5, 1:5], caption = "An example table")
-```
 
 # Including Plots
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+![plot of chunk pressure](figure/pressure-1.png)
 
 
 ## Testing the image with an R chunk from a png file
 
-```{r, fig.retina=3}
+![plot of chunk unnamed-chunk-1](./ir.clubname.ovr.png)
 
-img1_path<- "./ir.clubname.ovr.png"
-knitr::include_graphics(img1_path)
+## Testing the image with an R chunk from ggplot object
 
-```
-
-<!-- ## Testing the image with a ggplot object one two three four -->
-
-<!-- ```{r echo=FALSE, warning=FALSE, out.width = "30%"} -->
-<!-- print(ir.clubname.ovr.2) -->
-<!-- ``` -->
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
