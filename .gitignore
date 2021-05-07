@@ -2,16 +2,3 @@
 .Rhistory
 .RData
 .Ruserdata
-
-# Ignore everything
-*
-
-# But not these files...
-!.gitignore
-!index.Rmd
-!about.Rmd
-!_site.yml
-# etc...
-
-# ...even if they are in subdirectories
-!*/
