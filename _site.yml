@@ -27,7 +27,7 @@ navbar:
     - icon: fa-question fa-lg
       href: https://example.com
 output:
-  html_document:
+  MyRmdTemplate::my_html_format:
     theme: flatly
     fig_retina: 2
     toc: true
