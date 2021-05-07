@@ -28,8 +28,10 @@ navbar:
       href: https://example.com
 output:
   MyRmdTemplate::my_html_format:
-    theme: cerulean
+    theme: flatly
+    fig_retina: 2
     toc: true
+    toc_depth: 1
     toc_float:
       collapsed: true
     

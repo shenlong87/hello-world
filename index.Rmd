@@ -8,6 +8,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(knitr)
 library(ggplot2)
 library(png)
+
 ```
 
 # R Markdown {.tabset}
@@ -48,11 +49,11 @@ knitr::include_graphics(img1_path)
 
 ```
 
-<!-- ## Testing the image with a ggplot object one two three four -->
+## Testing the image with a ggplot object one two three four
 
-<!-- ```{r echo=FALSE, warning=FALSE, out.width = "30%"} -->
-<!-- print(ir.clubname.ovr.2) -->
-<!-- ``` -->
+<!-- # ```{r echo=FALSE, warning=FALSE, out.width = "100%"} -->
+<!-- # ir.clubname.ovr.2 -->
+<!-- # ``` -->
 
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -64,4 +65,6 @@ This is a test to insert an image to the report
 
 After the image there is a table
 
-![first image](table_series_overlap.png)
+![last image](table_series_overlap.png)
+
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 2000;"></div>
