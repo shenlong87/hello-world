@@ -28,6 +28,7 @@ navbar:
       href: https://example.com
 output:
   MyRmdTemplate::my_html_format:
+    css: style.css
     theme: flatly
     fig_retina: 2
     toc: true
