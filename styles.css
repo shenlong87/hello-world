@@ -1,0 +1,141 @@
+.flat-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+}
+th {
+    background-color: #75AADB;
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+td {
+    background-color: rgb(238238238);
+    color: rgb(111111111);
+    padding: 20px 30px;
+}
+
+div.navbar-collapse.collapse {
+  background-color: green;
+  max-width: 1600px;
+  /* margin: auto; */
+  border: 3px solid #73AD21;
+}
+
+/* Biggest container when floating TOC */
+body {
+  /* background-color: powderblue; */
+  max-width: 1600px;
+  margin: auto;
+  border: 3px solid purple;
+}
+
+/* Second Biggest container when floating TOC. Contained within bodybut it contains rowso width has to be bigger*/
+.container-fluid.main-container {
+	/* background-color: gray; */
+	max-width: 1500px;
+	border: 3px solid red;
+}
+
+/* Thirs Biggest container when floating TOC. Contained within fluid main containerso width will never be larger than that
+This only applies when there is a floating TOC */
+.row {
+  /* background-color: gray; */
+  max-width: 1200px !important;
+  /* width: 50% */
+  margin: auto;
+  border: 3px solid blue;
+}
+
+/*This determines the width of the nav bar and keeps it constant*/
+.container {
+    width: 90%;
+}
+
+/*Keep the report body always at 75% of the container*/
+/* .col-md-8 {
+    width: 75%;
+} */
+
+/*div.col-sm-12.col-md-8.col-lg-9 {
+	padding-left: 30px;
+    padding-right: 40px;
+}*/
+
+/*Table of contents padding for all possible resolutions*/
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	padding-left: 30px;
+    padding-right: 40px;
+	
+}
+
+/* tocify is for floating TOC only. Otherwise TOC is in container-fluid.main-container*/
+/* .tocify {
+  max-width: 200px !important;
+}
+ */
+/* body > div.container-fluid.main-container > div > div.toc-content.col-sm-12.col-md-8.col-lg-9 */
+
+/*THESE TWO KEEP THE TOC PROPORTIONALLY AT 25% AT 992PX OR MORE. THEY HAVE TO ADD UP TO 100% WITH THE CONTENT BOXES*/
+@media (min-width: 992px) {
+.col-md-4 {
+    width: 25%;
+	}
+}
+
+@media (min-width: 1200px) {
+.col-lg-3 {
+    width: 25%;
+	}
+}
+
+/*THESE TWO KEEP THE CONTENT BOXED PROPORTIONALLY PLACED AT 992PX OR MORE*/
+
+@media (min-width: 992px) {
+.col-md-8 {
+    width: 75%;
+	}
+}
+
+@media (min-width: 1200px) {
+.col-lg-9 {
+    width: 75%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+	div.tocify {
+		width: 100% !important;
+		position: relative;
+		max-width: none !important;
+	}
+}
+
+/* THIS ONE IS TO AVOID THE SMALL JUMP OF THE CONTENT CONTAINER WHEN GOING BELOW 768PX */
+@media (min-width: 768px) and (max-width: 992px) {
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+     float: none;
+	}
+}
+
+
+#TOC {
+	border: 2px solid red;
+}
+
+p {
+  border: 2px solid red;
+}
+
+h1 {
+  border: 2px solid black;
+}
+
+.tocify-extend-page {
+	height: 0px;
+}
