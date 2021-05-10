@@ -67,4 +67,4 @@ After the image there is a table
 
 ![last image](table_series_overlap.png)
 
-<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 2000;"></div>
+<div class="tocify-extend-page" data-unique="tocify-extend-page" style="height: 200;"></div>

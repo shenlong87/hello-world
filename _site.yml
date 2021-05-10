@@ -31,7 +31,7 @@ output:
     theme: flatly
     fig_retina: 2
     toc: true
-    toc_depth: 1
+    toc_depth: 2
     toc_float:
       collapsed: true
     
