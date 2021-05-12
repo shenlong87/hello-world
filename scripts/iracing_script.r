@@ -66,7 +66,7 @@ assign(paste0("ir.",bp_by,".",s), ir %>%
        # title = "iRacing VRS Sprint Series",
        subtitle = paste0(rvar," distribution by ",if_else(tolower(bp_by)=="division",paste0(bp_by),"Club")," (divisions ",div_from," to ",div_to,")")
       ) +
-       # caption="As of 21S2W7") + 
+       # caption="As of 21S2W8") + 
   # facet_wrap(~division) +
   theme(axis.text.x = element_text(angle = 60,hjust = 1,family = "Cinzel",size=10),legend.position = "none",
         title = element_text(family = "Cinzel", size = 12),
@@ -88,7 +88,7 @@ assign(paste0("ir.",bp_by,".",s), ir %>%
 #BARCHARTS START HERE
  
 bp_by <- c("division") #Do not change for bar charts by driver
-sg <- c("fixed") #Series to filter in the bar chart by division
+sg <- c("vrs") #Series to filter in the bar chart by division
 
 ir.sum.div <- assign(paste0("ir.sum.",bp_by,".",sg),ir %>%
   group_by_at(vars(series,bp_by)) %>%
@@ -257,7 +257,7 @@ ir_table <- gt(ir_both)%>%
     source_note = md("**Source:** iRacing Member Site - Series Stats")
   ) %>%
   tab_source_note(
-    source_note = md("**Data Updated:** 21S2W7")
+    source_note = md("**Data Updated:** 21S2W8")
   ) %>% 
   tab_footnote(
     footnote = md("Drivers in these columns may have driven the other series"),
@@ -339,7 +339,7 @@ pw_vrs <- dr.division.vrs +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W7",
+    subtitle = "Unique Drivers - As of 21S2W8",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -354,7 +354,7 @@ pw_fixed <- dr.division.fixed +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W7",
+    subtitle = "Unique Drivers - As of 21S2W8",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -363,7 +363,7 @@ ggsave(plot = pw_fixed, paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.
 
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2W7")
+cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2W8")
 
 ir.clubname.vrs.2 <- ir.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
 ir.division.vrs.2 <- ir.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
