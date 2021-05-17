@@ -21,17 +21,22 @@ div_to<-10
 
 ir_fixed<-readr::read_csv("./Data/iracing_fixed_gt3.csv") %>%
   mutate_at(.,vars(division),as.factor)%>%
-  mutate(series="fixed")%>%
+  mutate(series="fixed",season="21s2")%>%
   filter(!clubname %in% c("Celtic","Connecticut"))
 
 ir_vrs<-readr::read_csv("./Data/iracing.csv") %>%
   mutate_at(.,vars(division),as.factor)%>%
-  mutate(series="vrs")%>%
+  mutate(series="vrs",season="21s2")%>%
+  filter(!clubname %in% c("Celtic","Connecticut"))
+
+ir_vrs_21s1<-readr::read_csv("./Data/iracing21s1.csv") %>%
+  mutate_at(.,vars(division),as.factor)%>%
+  mutate(series="vrs",season="21s1")%>%
   filter(!clubname %in% c("Celtic","Connecticut"))
 
 ir<-rbind(ir_fixed,ir_vrs) %>%
   filter(between(as.numeric(division), div_from,div_to)) %>%
-  group_by(custid)%>%
+  group_by(custid, season)%>%
   mutate(irating=max(irating)) %>%
   ungroup()%>%
   distinct(custid,name,clubname,countrycode,division,irating)
@@ -175,7 +180,7 @@ pw_ovr <- dr.division.ovr +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W8",
+    subtitle = "Unique Drivers - As of 21S2W9",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -183,7 +188,7 @@ pw_ovr <- dr.division.ovr +
 ggsave(plot=pw_ovr,filename=paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.9,height = 14.96,units = "in")
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2W8")
+cap<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2W9")
 tit <- c("iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed")
 
 ir.clubname.ovr.2 <- ir.clubname.ovr + labs(title = tit, caption=cap)

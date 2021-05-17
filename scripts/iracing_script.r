@@ -23,12 +23,17 @@ div_to<-10
 
 ir_fixed<-readr::read_csv("./Data/iracing_fixed_gt3.csv") %>%
   mutate_at(.,vars(division),as.factor)%>%
-  mutate(series="fixed")%>%
+  mutate(series="fixed",season="21s2")%>%
   filter(!clubname %in% c("Celtic","Connecticut"))
 
 ir_vrs<-readr::read_csv("./Data/iracing.csv") %>%
   mutate_at(.,vars(division),as.factor)%>%
-  mutate(series="vrs")%>%
+  mutate(series="vrs",season="21s2")%>%
+  filter(!clubname %in% c("Celtic","Connecticut"))
+
+ir_vrs_21s1<-readr::read_csv("./Data/iracing21s1.csv") %>%
+  mutate_at(.,vars(division),as.factor)%>%
+  mutate(series="vrs",season="21s1")%>%
   filter(!clubname %in% c("Celtic","Connecticut"))
 
 ir<-rbind(ir_fixed,ir_vrs) %>%
@@ -47,6 +52,7 @@ iracing <- function(bp_by="division",rvar="irating",div_from=1,div_to=10,s="vrs"
 bp_by <- c(bp_by)
 s <- c(s)
 rvar <- c(rvar)
+# seas<-c(seas)
 
 div_from<-div_from
 div_to<-div_to
@@ -71,7 +77,7 @@ assign(paste0("ir.",bp_by,".",s), ir %>%
   theme(axis.text.x = element_text(angle = 60,hjust = 1,family = "Cinzel",size=10),legend.position = "none",
         title = element_text(family = "Cinzel", size = 12),
          axis.text.y = element_text(family = "Cinzel", size = 10))+
-  scale_y_continuous(name=rvar, breaks=seq(0, 10000, 500),labels=scales::comma),
+  scale_y_continuous(name=rvar, breaks=seq(0, 11000, 500),labels=scales::comma),
   envir = .GlobalEnv)
 
 
@@ -88,7 +94,7 @@ assign(paste0("ir.",bp_by,".",s), ir %>%
 #BARCHARTS START HERE
  
 bp_by <- c("division") #Do not change for bar charts by driver
-sg <- c("vrs") #Series to filter in the bar chart by division
+sg <- c("fixed") #Series to filter in the bar chart by division
 
 ir.sum.div <- assign(paste0("ir.sum.",bp_by,".",sg),ir %>%
   group_by_at(vars(series,bp_by)) %>%
@@ -257,7 +263,7 @@ ir_table <- gt(ir_both)%>%
     source_note = md("**Source:** iRacing Member Site - Series Stats")
   ) %>%
   tab_source_note(
-    source_note = md("**Data Updated:** 21S2W8")
+    source_note = md("**Data Updated:** 21S2W9")
   ) %>% 
   tab_footnote(
     footnote = md("Drivers in these columns may have driven the other series"),
@@ -339,10 +345,11 @@ pw_vrs <- dr.division.vrs +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W8",
+    subtitle = "Unique Drivers - As of 21S2W9",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
+
 ggsave(plot = pw_vrs, paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.9,height = 14.96, units = "in")
 
 pw_title <- c("iRacing - Fanatec GT3 Challenge - Fixed")
@@ -354,7 +361,7 @@ pw_fixed <- dr.division.fixed +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W8",
+    subtitle = "Unique Drivers - As of 21S2W9",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -363,7 +370,7 @@ ggsave(plot = pw_fixed, paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.
 
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2W8")
+cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2W9")
 
 ir.clubname.vrs.2 <- ir.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
 ir.division.vrs.2 <- ir.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
