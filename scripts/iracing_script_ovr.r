@@ -180,7 +180,7 @@ pw_ovr <- dr.division.ovr +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W11",
+    subtitle = "Unique Drivers - As of 21S2",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -188,7 +188,7 @@ pw_ovr <- dr.division.ovr +
 ggsave(plot=pw_ovr,filename=paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.9,height = 14.96,units = "in")
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2W11")
+cap<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2")
 tit <- c("iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed")
 
 ir.clubname.ovr.2 <- ir.clubname.ovr + labs(title = tit, caption=cap)

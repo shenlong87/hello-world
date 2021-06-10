@@ -263,7 +263,7 @@ ir_table <- gt(ir_both)%>%
     source_note = md("**Source:** iRacing Member Site - Series Stats")
   ) %>%
   tab_source_note(
-    source_note = md("**Data Updated:** 21S2W11")
+    source_note = md("**Data Updated:** 21S2")
   ) %>% 
   tab_footnote(
     footnote = md("Drivers in these columns may have driven the other series"),
@@ -345,7 +345,7 @@ pw_vrs <- dr.division.vrs +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W11",
+    subtitle = "Unique Drivers - As of 21S2",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -361,7 +361,7 @@ pw_fixed <- dr.division.fixed +
   patchwork::plot_layout(design = design)+
   plot_annotation(
     title = pw_title,
-    subtitle = "Unique Drivers - As of 21S2W11",
+    subtitle = "Unique Drivers - As of 21S2",
     caption = "Source: iRacing Member Site - Series Stats",
     theme = theme(title = element_text(family = "Cinzel"))
   )
@@ -370,7 +370,7 @@ ggsave(plot = pw_fixed, paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.
 
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2W11")
+cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2")
 
 ir.clubname.vrs.2 <- ir.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
 ir.division.vrs.2 <- ir.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
