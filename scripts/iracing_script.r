@@ -94,7 +94,7 @@ assign(paste0("ir.",bp_by,".",s), ir %>%
 #BARCHARTS START HERE
  
 bp_by <- c("division") #Do not change for bar charts by driver
-sg <- c("vrs") #Series to filter in the bar chart by division
+sg <- c("fixed") #Series to filter in the bar chart by division
 
 ir.sum.div <- assign(paste0("ir.sum.",bp_by,".",sg),ir %>%
   group_by_at(vars(series,bp_by)) %>%
@@ -351,7 +351,7 @@ pw_vrs <- dr.division.vrs +
   plot_annotation(
     title = pw_title,
     subtitle = "Unique Drivers - As of 21S2",
-    caption = "Source: iRacing Member Site - Series Stats",
+    caption = paste0("Source: iRacing Member Site - Series Stats","\nBox Plots ranked by median iRating"),
     theme = theme(title = element_text(family = "Cinzel"))
   )
 
@@ -367,7 +367,7 @@ pw_fixed <- dr.division.fixed +
   plot_annotation(
     title = pw_title,
     subtitle = "Unique Drivers - As of 21S2",
-    caption = "Source: iRacing Member Site - Series Stats",
+    caption = paste0("Source: iRacing Member Site - Series Stats","\nBox Plots ranked by median iRating"),
     theme = theme(title = element_text(family = "Cinzel"))
   )
 
@@ -375,17 +375,18 @@ ggsave(plot = pw_fixed, paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.
 
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nData current as of 21S2")
+capdr<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2")
+capir<- paste0("Source: iRacing Member Site - Series Stats","\nBox Plots ranked by median iRating","\nUnique Drivers - As of 21S2")
 
-ir.clubname.vrs.2 <- ir.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
-ir.division.vrs.2 <- ir.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
-dr.clubname.vrs.2 <- dr.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
-dr.division.vrs.2 <- dr.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=cap)
+ir.clubname.vrs.2 <- ir.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=capir)
+ir.division.vrs.2 <- ir.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=capir)
+dr.clubname.vrs.2 <- dr.clubname.vrs + labs(title = "iRacing VRS Sprint Series", caption=capdr)
+dr.division.vrs.2 <- dr.division.vrs + labs(title = "iRacing VRS Sprint Series", caption=capdr)
 
-ir.clubname.fixed.2 <- ir.clubname.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=cap)
-ir.division.fixed.2 <- ir.division.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=cap)
-dr.clubname.fixed.2 <- dr.clubname.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=cap)
-dr.division.fixed.2 <- dr.division.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=cap)
+ir.clubname.fixed.2 <- ir.clubname.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=capir)
+ir.division.fixed.2 <- ir.division.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=capir)
+dr.clubname.fixed.2 <- dr.clubname.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=capdr)
+dr.division.fixed.2 <- dr.division.fixed + labs(title = "iRacing Fanatec GT3 Challenge - Fixed", caption=capdr)
 
 #Save individual plots
 ggsave(filename= paste0("./Plots/Individual/vrs/","ir.clubname.vrs.png"), plot=ir.clubname.vrs.2, dpi=320, width = 9.45,height = 7.48,units = "in")

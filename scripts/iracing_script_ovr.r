@@ -188,13 +188,14 @@ pw_ovr <- dr.division.ovr +
 ggsave(plot=pw_ovr,filename=paste0("./Plots/",pw_title,".png"), dpi=320, width = 18.9,height = 14.96,units = "in")
 
 #MODIFY PLOTS TO SAVE THEM INDIVIDUALLY
-cap<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2")
+capdr<- paste0("Source: iRacing Member Site - Series Stats","\nUnique Drivers - As of 21S2")
+capir<- paste0("Source: iRacing Member Site - Series Stats","\nBox Plots ranked by median iRating","\nUnique Drivers - As of 21S2")
 tit <- c("iRacing - Combined VRS GT Sprint and Fanatec GT3 Fixed")
 
-ir.clubname.ovr.2 <- ir.clubname.ovr + labs(title = tit, caption=cap)
-ir.division.ovr.2 <- ir.division.ovr + labs(title = tit, caption=cap)
-dr.clubname.ovr.2 <- dr.clubname.ovr + labs(title = tit, caption=cap)
-dr.division.ovr.2 <- dr.division.ovr + labs(title = tit, caption=cap)
+ir.clubname.ovr.2 <- ir.clubname.ovr + labs(title = tit, caption=capir)
+ir.division.ovr.2 <- ir.division.ovr + labs(title = tit, caption=capir)
+dr.clubname.ovr.2 <- dr.clubname.ovr + labs(title = tit, caption=capdr)
+dr.division.ovr.2 <- dr.division.ovr + labs(title = tit, caption=capdr)
 
 #Save individual plots
 ggsave(filename = paste0("./Plots/Individual/","ir.clubname.ovr.png"), plot=ir.clubname.ovr.2, dpi=320, width = 9.45,height = 7.48,units = "in")
