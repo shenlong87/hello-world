@@ -181,7 +181,7 @@ pw_ovr <- dr.division.ovr +
   plot_annotation(
     title = pw_title,
     subtitle = "Unique Drivers - As of 21S2",
-    caption = "Source: iRacing Member Site - Series Stats",
+    caption = paste0("Source: iRacing Member Site - Series Stats","\nBox Plots ranked by median iRating"),
     theme = theme(title = element_text(family = "Cinzel"))
   )
 
