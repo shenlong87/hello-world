@@ -269,7 +269,12 @@ ir_table <- gt(ir_both)%>%
     footnote = md("Drivers in these columns may have driven the other series"),
     locations = cells_column_labels(
       columns = vars(vrs,fixed,perc_vrs,perc_fixed))
-    )%>%
+    )%>% 
+  tab_footnote(
+    footnote = md("Percentages may not add up to 100% due to rounding"),
+    locations = cells_column_labels(
+      columns = vars(perc_both,perc_fixed_only,perc_vrs_only))
+  )%>%
   tab_options(footnotes.font.size = px(11),
               source_notes.font.size = px(12)) %>%
   tab_style(
