@@ -1,3 +1,4 @@
+# Don't forget to run my MyRmdTemplate package to apply custom format function (my_html_format)
 output_dir: "."
 navbar:
   title: "My Website"
@@ -28,7 +29,6 @@ navbar:
       href: https://example.com
 output:
   MyRmdTemplate::my_html_format:
-    theme: flatly
     fig_retina: 2
     toc: true
     toc_depth: 2
